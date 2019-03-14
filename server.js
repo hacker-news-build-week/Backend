@@ -3,11 +3,9 @@ const vader = require('vader-sentiment');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// const port = 5200;
-
 const port = process.env.PORT || 5000;
-
 const app = express();
+
 const token =
   'eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ';
 
@@ -282,9 +280,7 @@ app.get('/api/saltyComments/:saltyUserId', authenticator, (req, res) => {
   const saltyUserComments = saltyComments.filter(
     commentsObject => commentsObject.saltyUserId === req.params.saltyUserId
   )[0].comments;
-  setTimeout(() => {
-    res.send(saltyUserComments);
-  }, 100);
+  res.send(saltyUserComments);
 });
 
 app.get('/', (req, res) => {
@@ -314,9 +310,7 @@ app.post('/api/saltyComments', authenticator, (req, res) => {
     }
   });
   // Needs error code:
-  setTimeout(() => {
-    res.send(saltyUserCommentsAdd);
-  }, 100);
+  res.send(saltyUserCommentsAdd);
 });
 
 app.delete('/api/saltyComments', authenticator, (req, res) => {
@@ -337,9 +331,7 @@ app.delete('/api/saltyComments', authenticator, (req, res) => {
       return commentsObject;
     }
   });
-  setTimeout(() => {
-    res.send(saltyUserCommentsDelete);
-  }, 100);
+  res.send(saltyUserCommentsDelete);
 });
 
 app.put('/api/saltyComments', authenticator, (req, res) => {
@@ -370,22 +362,15 @@ app.put('/api/saltyComments', authenticator, (req, res) => {
       return commentsObject;
     }
   });
-
-  setTimeout(() => {
-    res.send(saltyUserCommentsEdit);
-  }, 100);
+  res.send(saltyUserCommentsEdit);
 });
 
 app.get('/api/saltiestHNUsers', authenticator, (req, res) => {
-  setTimeout(() => {
-    res.send(saltiestHNUsers);
-  }, 100);
+  res.send(saltiestHNUsers);
 });
 
 app.get('/api/saltiestHNTopics', authenticator, (req, res) => {
-  setTimeout(() => {
-    res.send(saltiestHNTopics);
-  }, 100);
+  res.send(saltiestHNTopics);
 });
 
 app.listen(port, () => {
