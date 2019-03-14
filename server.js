@@ -3,7 +3,10 @@ const vader = require('vader-sentiment');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 5200;
+// const port = 5200;
+
+const port = process.env.PORT || 5000;
+
 const app = express();
 const token =
   'eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ';
