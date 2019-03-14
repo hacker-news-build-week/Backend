@@ -284,6 +284,10 @@ app.get('/api/saltyComments/:saltyUserId', authenticator, (req, res) => {
   }, 100);
 });
 
+app.get('/', (req, res) => {
+  res.json({ message: 'server working!' });
+});
+
 app.post('/api/saltyComments', authenticator, (req, res) => {
   const { saltyUserId, newCommentText } = req.body;
   const saltyUserComments = saltyComments.filter(
