@@ -5,9 +5,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 const app = express();
-
 const token =
   'eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ';
+
+app.use(bodyParser.json());
+app.use(cors());
 
 let saltyUsers = [
   {
@@ -233,9 +235,10 @@ const checkSentiment = commentText => {
   };
 };
 
-app.use(bodyParser.json());
-
-app.use(cors());
+// Sends a message from the server url (verified server is working properly).
+app.get('/', (req, res) => {
+  res.json({ message: 'The server is working!' });
+});
 
 function authenticator(req, res, next) {
   const { authorization } = req.headers;
@@ -281,10 +284,6 @@ app.get('/api/saltyComments/:saltyUserId', authenticator, (req, res) => {
     commentsObject => commentsObject.saltyUserId === req.params.saltyUserId
   )[0].comments;
   res.send(saltyUserComments);
-});
-
-app.get('/', (req, res) => {
-  res.json({ message: 'server working!' });
 });
 
 app.post('/api/saltyComments', authenticator, (req, res) => {
