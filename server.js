@@ -96,124 +96,61 @@ let saltiestHNUsers = [
     id: '2864dcb5-86f2-408b-ab1a-822ffa3a2dd1',
     username: 'mnm1',
     numberOfComments: 195,
-    overallSentNum: -0.234948717948718
+    overallSentNum: -0.2349
   },
   {
     id: '53da4330-b78e-4128-82c9-315b4d16acbc',
     username: 'StanislavPetrov',
     numberOfComments: 124,
-    overallSentNum: -0.163651612903226
+    overallSentNum: -0.1637
   },
   {
     id: 'ed456f91-bcb1-4498-800e-5dbf980a4017',
     username: 'akira2501',
     numberOfComments: 58,
-    overallSentNum: -0.162703448275862
+    overallSentNum: -0.1627
   },
   {
     id: '7402bbf3-30da-47a0-824c-ec49a82212bb',
     username: 'Tech-Noir',
     numberOfComments: 65,
-    overallSentNum: -0.148124615384615
+    overallSentNum: -0.1481
   },
   {
     id: '52aa3e72-f7e3-4080-8127-28dee8a650df',
     username: 'ataturk',
     numberOfComments: 357,
-    overallSentNum: -0.137034733893558
+    overallSentNum: -0.137
   },
   {
     id: 'e7a578cb-00c9-43df-9a88-00dd44888f68',
     username: 'zouhair',
     numberOfComments: 50,
-    overallSentNum: -0.130256
+    overallSentNum: -0.1303
   },
   {
     id: '604cb24a-85cd-4364-9fb7-801be78ce26b',
     username: 'fancyfacebook',
     numberOfComments: 86,
-    overallSentNum: -0.126418604651163
+    overallSentNum: -0.1264
   },
   {
     id: '2bd5d46a-fe37-4036-b63f-4c8e1abc5c4b',
     username: 'Quarrelsome',
     numberOfComments: 67,
-    overallSentNum: -0.111311940298507
+    overallSentNum: -0.1113
   },
   {
     id: '3b3c6069-68a4-4862-8310-afc8b0fbe47f',
     username: 'stmfreak',
     numberOfComments: 51,
-    overallSentNum: -0.109405882352941
+    overallSentNum: -0.1094
   },
   {
     id: '2e928df0-c7a1-4a84-9ca0-4a55925f2318',
     username: 'bigbugbag',
     numberOfComments: 76,
-    overallSentNum: -0.109197368421053
-  }
-];
-
-let saltiestHNTopics = [
-  {
-    id: '2864dcb5-86f2-408b-ab1a-822ffa3a2dd1',
-    topic: '',
-    numberOfComments: 3934,
-    overallSentNum: -0.489
-  },
-  {
-    id: '53da4330-b78e-4128-82c9-315b4d16acbc',
-    topic: '',
-    numberOfComments: 2464,
-    overallSentNum: -0.233
-  },
-  {
-    id: 'ed456f91-bcb1-4498-800e-5dbf980a4017',
-    topic: '',
-    numberOfComments: 1364,
-    overallSentNum: -0.611
-  },
-  {
-    id: '7402bbf3-30da-47a0-824c-ec49a82212bb',
-    topic: '',
-    numberOfComments: 7854,
-    overallSentNum: -0.74
-  },
-  {
-    id: '52aa3e72-f7e3-4080-8127-28dee8a650df',
-    topic: '',
-    numberOfComments: 2335,
-    overallSentNum: -0.123
-  },
-  {
-    id: 'e7a578cb-00c9-43df-9a88-00dd44888f68',
-    topic: '',
-    numberOfComments: 6342,
-    overallSentNum: -0.362
-  },
-  {
-    id: '604cb24a-85cd-4364-9fb7-801be78ce26b',
-    topic: '',
-    numberOfComments: 3223,
-    overallSentNum: -0.675
-  },
-  {
-    id: '2bd5d46a-fe37-4036-b63f-4c8e1abc5c4b',
-    topic: '',
-    numberOfComments: 2114,
-    overallSentNum: -0.256
-  },
-  {
-    id: '3b3c6069-68a4-4862-8310-afc8b0fbe47f',
-    topic: '',
-    numberOfComments: 1357,
-    overallSentNum: -0.275
-  },
-  {
-    id: '2e928df0-c7a1-4a84-9ca0-4a55925f2318',
-    topic: '',
-    numberOfComments: 5432,
-    overallSentNum: -0.454
+    overallSentNum: -0.1092
   }
 ];
 
@@ -366,10 +303,6 @@ app.put('/api/saltyComments', authenticator, (req, res) => {
 
 app.get('/api/saltiestHNUsers', authenticator, (req, res) => {
   res.send(saltiestHNUsers);
-});
-
-app.get('/api/saltiestHNTopics', authenticator, (req, res) => {
-  res.send(saltiestHNTopics);
 });
 
 app.listen(port, () => {
